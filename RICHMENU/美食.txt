@@ -1,0 +1,89 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "美食_ 文選單",
+  "chatBarText": "查看更多資訊",
+  "areas": [
+    {
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "width": 815,
+        "height": 828
+      },
+      "action": {
+        "type": "postback",
+        "text": "他喜歡的是台式料理",
+        "data": "美食_台式"
+      }
+    },
+    {
+      "bounds": {
+        "x": 845,
+        "y": 17,
+        "width": 823,
+        "height": 819
+      },
+      "action": {
+        "type": "postback",
+        "text": "他最喜歡中式料理",
+        "data": "美食_中式"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1689,
+        "y": 13,
+        "width": 807,
+        "height": 827
+      },
+      "action": {
+        "type": "postback",
+        "text": "他很享受西式餐點",
+        "data": "美食_西式"
+      }
+    },
+    {
+      "bounds": {
+        "x": 8,
+        "y": 861,
+        "width": 828,
+        "height": 820
+      },
+      "action": {
+        "type": "postback",
+        "text": "日式食物是他的愛",
+        "data": "美食_日式"
+      }
+    },
+    {
+      "bounds": {
+        "x": 853,
+        "y": 853,
+        "width": 815,
+        "height": 828
+      },
+      "action": {
+        "type": "postback",
+        "text": "辣辣的韓式食物牢牢抓住他的胃",
+        "data": "美食_韓式"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1685,
+        "y": 861,
+        "width": 815,
+        "height": 820
+      },
+      "action": {
+        "type": "postback",
+        "text": "其他",
+        "data": "美食_其他"
+      }
+    }
+  ]
+}

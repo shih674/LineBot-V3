@@ -1,0 +1,89 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "電玩 圖文選單",
+  "chatBarText": "查看更多資訊",
+  "areas": [
+    {
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "width": 815,
+        "height": 828
+      },
+      "action": {
+        "type": "postback",
+        "text": "他最近很愛玩手機遊戲",
+        "data": "電玩_手機遊戲"
+      }
+    },
+    {
+      "bounds": {
+        "x": 845,
+        "y": 17,
+        "width": 823,
+        "height": 819
+      },
+      "action": {
+        "type": "postback",
+        "text": "他很愛玩線上遊戲喔",
+        "data": "電玩_線上遊戲"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1689,
+        "y": 13,
+        "width": 807,
+        "height": 827
+      },
+      "action": {
+        "type": "postback",
+        "text": "他喜歡玩掌上型遊戲機",
+        "data": "電玩_掌上型遊戲機"
+      }
+    },
+    {
+      "bounds": {
+        "x": 8,
+        "y": 861,
+        "width": 828,
+        "height": 820
+      },
+      "action": {
+        "type": "postback",
+        "text": "他喜歡玩家用遊戲機",
+        "data": "電玩_家用遊戲機"
+      }
+    },
+    {
+      "bounds": {
+        "x": 853,
+        "y": 853,
+        "width": 815,
+        "height": 828
+      },
+      "action": {
+        "type": "postback",
+        "text": "他很喜歡玩單機遊戲",
+        "data": "電玩_大型單機遊戲"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1685,
+        "y": 861,
+        "width": 815,
+        "height": 820
+      },
+      "action": {
+        "type": "postback",
+        "text": "他喜歡玩的遊戲不在上面",
+        "data": "電玩_其他"
+      }
+    }
+  ]
+}

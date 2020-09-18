@@ -1,0 +1,89 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "音樂 圖文選單 1",
+  "chatBarText": "查看更多資訊",
+  "areas": [
+    {
+      "bounds": {
+        "x": 12,
+        "y": 12,
+        "width": 817,
+        "height": 842
+      },
+      "action": {
+        "type": "postback",
+        "text": "古典音樂",
+        "data": "音樂_古典音樂"
+      }
+    },
+    {
+      "bounds": {
+        "x": 842,
+        "y": 8,
+        "width": 833,
+        "height": 842
+      },
+      "action": {
+        "type": "postback",
+        "text": "流行音樂",
+        "data": "音樂_流行音樂"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1704,
+        "y": 25,
+        "width": 775,
+        "height": 812
+      },
+      "action": {
+        "type": "postback",
+        "text": "電音樂曲",
+        "data": "音樂_電音樂曲"
+      }
+    },
+    {
+      "bounds": {
+        "x": 12,
+        "y": 887,
+        "width": 809,
+        "height": 780
+      },
+      "action": {
+        "type": "postback",
+        "text": "嘻哈饒舌",
+        "data": "音樂_嘻哈饒舌"
+      }
+    },
+    {
+      "bounds": {
+        "x": 875,
+        "y": 895,
+        "width": 767,
+        "height": 788
+      },
+      "action": {
+        "type": "postback",
+        "text": "獨立樂團",
+        "data": "音樂_獨立樂團"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1733,
+        "y": 920,
+        "width": 755,
+        "height": 738
+      },
+      "action": {
+        "type": "postback",
+        "text": "沒找到適合的選項",
+        "data": "音樂_其他"
+      }
+    }
+  ]
+}

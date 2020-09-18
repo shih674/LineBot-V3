@@ -1,0 +1,89 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "旅遊",
+  "chatBarText": "查看更多資訊",
+  "areas": [
+    {
+      "bounds": {
+        "x": 8,
+        "y": 25,
+        "width": 817,
+        "height": 800
+      },
+      "action": {
+        "type": "postback",
+        "text": "他喜歡在國內旅遊",
+        "data": "旅遊_國內旅遊"
+      }
+    },
+    {
+      "bounds": {
+        "x": 837,
+        "y": 29,
+        "width": 830,
+        "height": 804
+      },
+      "action": {
+        "type": "postback",
+        "text": "他喜歡到美洲國家玩",
+        "data": "旅遊_美洲度假"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1683,
+        "y": 25,
+        "width": 805,
+        "height": 804
+      },
+      "action": {
+        "type": "postback",
+        "text": "他很嚮往歐洲的步調",
+        "data": "旅遊_歐洲漫步"
+      }
+    },
+    {
+      "bounds": {
+        "x": 29,
+        "y": 854,
+        "width": 775,
+        "height": 792
+      },
+      "action": {
+        "type": "postback",
+        "text": "東南亞是他出國的首選",
+        "data": "旅遊_東南亞探險"
+      }
+    },
+    {
+      "bounds": {
+        "x": 850,
+        "y": 854,
+        "width": 804,
+        "height": 800
+      },
+      "action": {
+        "type": "postback",
+        "text": "他很喜歡東北亞的國家",
+        "data": "旅遊_東北亞遊玩"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1696,
+        "y": 846,
+        "width": 792,
+        "height": 819
+      },
+      "action": {
+        "type": "postback",
+        "text": "他其實喜歡去...",
+        "data": "旅遊_其他"
+      }
+    }
+  ]
+}

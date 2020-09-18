@@ -1,0 +1,89 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "購物",
+  "chatBarText": "查看更多資訊",
+  "areas": [
+    {
+      "bounds": {
+        "x": 11,
+        "y": 11,
+        "width": 808,
+        "height": 808
+      },
+      "action": {
+        "type": "postback",
+        "text": "他喜歡流行服飾",
+        "data": "購物_流行服飾"
+      }
+    },
+    {
+      "bounds": {
+        "x": 833,
+        "y": 22,
+        "width": 837,
+        "height": 804
+      },
+      "action": {
+        "type": "postback",
+        "text": "他常買家用品或實用的東西",
+        "data": "購物_家用實物"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1692,
+        "y": 25,
+        "width": 794,
+        "height": 776
+      },
+      "action": {
+        "type": "postback",
+        "text": "他喜歡精品、名牌",
+        "data": "購物_精品名牌"
+      }
+    },
+    {
+      "bounds": {
+        "x": 11,
+        "y": 855,
+        "width": 804,
+        "height": 804
+      },
+      "action": {
+        "type": "postback",
+        "text": "他看起來有使用電器的需求",
+        "data": "購物_電子器具"
+      }
+    },
+    {
+      "bounds": {
+        "x": 848,
+        "y": 858,
+        "width": 804,
+        "height": 794
+      },
+      "action": {
+        "type": "postback",
+        "text": "他很懂得保養自己",
+        "data": "購物_護膚保養"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1685,
+        "y": 862,
+        "width": 783,
+        "height": 794
+      },
+      "action": {
+        "type": "postback",
+        "text": "他買的東西比較特別",
+        "data": "購物_其他"
+      }
+    }
+  ]
+}

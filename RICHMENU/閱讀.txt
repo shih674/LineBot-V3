@@ -1,0 +1,89 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "閱讀 圖文選單",
+  "chatBarText": "查看更多資訊",
+  "areas": [
+    {
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "width": 815,
+        "height": 828
+      },
+      "action": {
+        "type": "postback",
+        "text": "他很喜歡旅遊類的書",
+        "data": "閱讀_旅遊叢書"
+      }
+    },
+    {
+      "bounds": {
+        "x": 845,
+        "y": 17,
+        "width": 823,
+        "height": 819
+      },
+      "action": {
+        "type": "postback",
+        "text": "他最喜歡看小說的唷",
+        "data": "閱讀_文學小說"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1689,
+        "y": 13,
+        "width": 807,
+        "height": 827
+      },
+      "action": {
+        "type": "postback",
+        "text": "他最近在看理財的書",
+        "data": "閱讀_商業理財"
+      }
+    },
+    {
+      "bounds": {
+        "x": 8,
+        "y": 861,
+        "width": 828,
+        "height": 820
+      },
+      "action": {
+        "type": "postback",
+        "text": "他有語言學習的需求",
+        "data": "閱讀_語言學習"
+      }
+    },
+    {
+      "bounds": {
+        "x": 853,
+        "y": 853,
+        "width": 815,
+        "height": 828
+      },
+      "action": {
+        "type": "postback",
+        "text": "他很愛心理勵志相關的書籍",
+        "data": "閱讀_心理勵志"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1685,
+        "y": 861,
+        "width": 815,
+        "height": 820
+      },
+      "action": {
+        "type": "postback",
+        "text": "Sorry~~ 他有興趣的類別不在上面耶~~",
+        "data": "閱讀_其他"
+      }
+    }
+  ]
+}

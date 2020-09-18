@@ -1,0 +1,90 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "運動 圖文選單 1",
+  "chatBarText": "查看更多資訊",
+  "areas": [
+    {
+      "bounds": {
+        "x": 25,
+        "y": 29,
+        "width": 792,
+        "height": 796
+      },
+      "action": {
+        "type": "postback",
+        "text": "他喜歡的運動是田徑~ ",
+        "data": "運動_田徑"
+      }
+    },
+    {
+      "bounds": {
+        "x": 883,
+        "y": 41,
+        "width": 784,
+        "height": 776
+      },
+      "action": {
+        "type": "postback",
+        "text": "他喜歡的是球類運動唷 ",
+        "data": "運動_球類"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1704,
+        "y": 37,
+        "width": 759,
+        "height": 747
+      },
+      "action": {
+        "type": "postback",
+        "text": "他喜歡的是有氧運動喔 ",
+        "data": "運動_有氧運動"
+      }
+    },
+    {
+      "bounds": {
+        "x": 12,
+        "y": 883,
+        "width": 805,
+        "height": 775
+      },
+      "action": {
+        "type": "postback",
+        "text": "他喜歡的是無氧運動喔 ^0^",
+        "data": "運動_無氧運動"
+      }
+    },
+    {
+      "bounds": {
+        "x": 879,
+        "y": 903,
+        "width": 763,
+        "height": 747
+      },
+      "action": {
+        "type": "postback",
+        "text": "他喜歡的是無氧運動",
+        "data": "運動_靜態休閒"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1724,
+        "y": 908,
+        "width": 751,
+        "height": 738
+      },
+      "action": {
+        "type": "postback",
+        "text": "我找不到適合的選項，我能自己打字告訴你",
+        "data": "運動_其他"
+      }
+    }
+  ]
+}
+

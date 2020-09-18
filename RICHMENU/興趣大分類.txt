@@ -1,0 +1,119 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "興趣",
+  "chatBarText": "點我 選擇興趣",
+  "areas": [
+    {
+      "bounds": {
+        "x": 7,
+        "y": 0,
+        "width": 826,
+        "height": 553
+      },
+      "action": {
+        "type": "postback",
+        "data": "9question_音樂"
+      }
+    },
+    {
+      "bounds": {
+        "x": 848,
+        "y": 11,
+        "width": 822,
+        "height": 546
+      },
+      "action": {
+        "type": "postback",
+        "data": "9question_運動"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1678,
+        "y": 14,
+        "width": 822,
+        "height": 533
+      },
+      "action": {
+        "type": "postback",
+        "data": "9question_影劇"
+      }
+    },
+    {
+      "bounds": {
+        "x": 10,
+        "y": 570,
+        "width": 822,
+        "height": 533
+      },
+      "action": {
+        "type": "postback",
+        "data": "9question_旅遊"
+      }
+    },
+    {
+      "bounds": {
+        "x": 836,
+        "y": 573,
+        "width": 822,
+        "height": 533
+      },
+      "action": {
+        "type": "postback",
+        "data": "9question_購物"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1669,
+        "y": 579,
+        "width": 822,
+        "height": 533
+      },
+      "action": {
+        "type": "postback",
+        "data": "9question_閱讀"
+      }
+    },
+    {
+      "bounds": {
+        "x": 14,
+        "y": 1120,
+        "width": 822,
+        "height": 533
+      },
+      "action": {
+        "type": "postback",
+        "data": "9question_電動"
+      }
+    },
+    {
+      "bounds": {
+        "x": 848,
+        "y": 1128,
+        "width": 794,
+        "height": 531
+      },
+      "action": {
+        "type": "postback",
+        "data": "9question_美食"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1670,
+        "y": 1131,
+        "width": 816,
+        "height": 543
+      },
+      "action": {
+        "type": "postback",
+        "data": "9question_其他"
+      }
+    }
+  ]
+}
