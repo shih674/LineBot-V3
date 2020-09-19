@@ -40,7 +40,6 @@ def callAPIdialog(json_input={"userId": "test000", "msg": "測試資料"}):
     '''
     print('\n::SYS訊息:: 呼叫對話引擎 \n')
     response = requests.post(backend_url, json=json_input)
-    #response = requests.post('https://7829a192484a.ngrok.io/api', json=json_input)
     response = response.json()
     print('\n::SYS訊息:: retrun content \n', response)
     print('\n::SYS訊息:: return object type: \n', type(response))
@@ -50,7 +49,7 @@ def callAPIdialog(json_input={"userId": "test000", "msg": "測試資料"}):
 @app.route("/", methods=['GET'])
 def hello():
     print(":: SYSTEM MSG :: 有人透過GET呼叫首頁'/'")
-    return '看到這個訊息，代表本py檔正常執行'
+    return '我是LINEBOT V3。看到這個訊息，代表本py檔正常執行'
 
 
 @app.route("/callback", methods=['POST'])
@@ -79,50 +78,59 @@ def handle_message(event):
     # 取得使用者ID
     user_id = event.source.user_id
 
-    # [臨時] 開發者特殊字串
-    if 'test674' in msg:
+    if '我選擇的是: ' not in msg:
+        # 組合成符合API input格式的字典
+        api_par = {"userId": user_id, "msg": msg}
+        print(f"api_par: {api_par}")
+        # 這邊應該要call API
+        pass_par = callAPIdialog(api_par)
+        print(f"::賴爸msg:: pss_par=",str(pass_par))
+        print(f"data type= {type(pass_par)}")
+        # pass_par = dict()
+        pass_par['userId'] = user_id
+        # pass_par['cur_state'] = msg
+        # 把從API拿到的訊息交給main解析成linebot要做的動作
+        reply_msg_element = main.main(pass_par)
 
-        line_bot_api.unlink_rich_menu_from_user(user_id=event.source.user_id)
-        rich_menu_id = 'richmenu-0b4d6446104a1adbe58416eeed1dd8c3' # 興趣大類別
-        line_bot_api.link_rich_menu_to_user( user_id=user_id, rich_menu_id=rich_menu_id)
-        print('綁定圖文選單')
-        # msg = {'cur_state': "basic_info_5", 'subject': '老師'}
-        # reply_msg_element = main.main(msg)
-        # line_bot_api.reply_message( event.reply_token, reply_msg_element)
-
+        # 測試api_par內容
+        # reply_msg_element.append(TextSendMessage(text=f'pai_par內容: {str(api_par)}'))
+        # print(f"pass_par: {pass_par}")
+        line_bot_api.reply_message( event.reply_token, reply_msg_element)
+        print('\n====================================================================================\n\n')
     else:
-    #     # 組合成符合API input格式的字典
-    #     api_par = {"userId": user_id, "msg": msg}
-    #     print(f"api_par: {api_par}")
-    #     # 這邊應該要call API
-    #     pass_par = callAPIdialog(api_par)
-    #     print(f"::賴爸msg:: pss_par=",str(pass_par))
-    #     print(f"data type= {type(pass_par)}")
-    #     pass_par['userId'] = user_id
-    #     # 把從API拿到的訊息交給main解析成linebot要做的動作
-    #     reply_msg_element = main.main(pass_par)
-    #
-    #     # 測試api_par內容
-    #     #reply_msg_element.append(TextSendMessage(text=f'pai_par內容: {str(api_par)}'))
-    #     #print(f"pass_par: {pass_par}")
-    #     line_bot_api.reply_message( event.reply_token, reply_msg_element)
-         print('\n====================================================================================\n\n')
+        print('圖文選單發出的訊息:', msg)
 
 
 @handler.add(PostbackEvent)
 def handle_postback_event(event):
-    try:
-        big_interest = event.postback.data.split('_')[0]
-        interest = event.postback.data.split('_')[1]
-    except:
-        print(':: SYS MSG :: postback有誤')
+    # 取得postback回傳內容
+    postback = event.postback.data
+    print('觸發POSTBACK事件，POSTBACK資料內容為: ', postback)
+    # 取得使用者ID
+    user_id = event.source.user_id
 
+    # 組合成符合API input格式的字典
+    api_par = {"userId": user_id, "msg": postback}
+    print(f"api_par: {api_par}")
+    # 這邊應該要call API
+    pass_par = callAPIdialog(api_par)
+    print(f"::賴爸postback:: pss_par=", str(pass_par))
+    print(f"data type= {type(pass_par)}")
+    pass_par['userId'] = user_id
+    # 把從API拿到的訊息交給main解析成linebot要做的動作
+    main.main(pass_par)
+
+    # line_bot_api.reply_message(event.reply_token, reply_msg_element)
+    print('====================================================================================\n')
+
+    big_interest = postback.split('_')[0]
+    interest = postback.split('_')[1]
     # 使用者在九大類別中選擇了...
     if big_interest == '9question':
         # 選擇了音樂
         if interest == '音樂':
             # 提問、綁定圖文選單-音樂
-            rich_menu_id = 'richmenu-8f5cf82c65dd4573209e73053b0196db'  # 圖文選單-音樂 id
+            rich_menu_id = 'richmenu-0e753f5359f10765c15a72cca90c8325'  # 圖文選單-音樂 id
             line_bot_api.link_rich_menu_to_user(user_id=event.source.user_id, rich_menu_id=rich_menu_id)
             print('綁定圖文選單 - 音樂')
             question1 = f'請問 他/她 喜歡什麼類型的音樂呢 ？'
@@ -131,7 +139,7 @@ def handle_postback_event(event):
 
         elif interest == '運動':
             # 提問、綁定圖文選單-運動
-            rich_menu_id = 'richmenu-025228c97996cc37f3673980f1e6ea16'  # 圖文選單-運動 id
+            rich_menu_id = 'richmenu-fffe6997e86a40769e887c86e399d7d7'  # 圖文選單-運動 id
             line_bot_api.link_rich_menu_to_user(user_id=event.source.user_id, rich_menu_id=rich_menu_id)
             print('綁定圖文選單 - 運動')
             question1 = f'請問 他/她 喜歡什麼類型的運動呢 ？'
@@ -140,7 +148,7 @@ def handle_postback_event(event):
 
         elif interest == '影劇':
             # 提問、綁定圖文選單-影劇
-            rich_menu_id = 'richmenu-c1fcd9427bd265ec8e5c9b75c42fb31e'  # 圖文選單-影劇 id
+            rich_menu_id = 'richmenu-7f34f76e2fa310f7536b2372af9f453b'  # 圖文選單-影劇 id
             line_bot_api.link_rich_menu_to_user(user_id=event.source.user_id, rich_menu_id=rich_menu_id)
             print('綁定圖文選單 - 影劇')
             question1 = f'請問 他/她 喜歡什麼類型的影劇呢 ？'
@@ -149,7 +157,7 @@ def handle_postback_event(event):
 
         elif interest == '旅遊':
             # 提問、綁定圖文選單-旅遊
-            rich_menu_id = 'richmenu-cca879ea113a244f44df1fa82db59e29'  # 圖文選單-旅遊 id
+            rich_menu_id = 'richmenu-daba551c917aa72b6d66687c5107854d'  # 圖文選單-旅遊 id
             line_bot_api.link_rich_menu_to_user(user_id=event.source.user_id, rich_menu_id=rich_menu_id)
             question1 = f'請問 他/她 喜歡什麼類型的旅遊呢 ？'
             messages1 = TextSendMessage(text=question1)
@@ -158,7 +166,7 @@ def handle_postback_event(event):
 
         elif interest == '購物':
             # 提問、綁定圖文選單-購物
-            rich_menu_id = 'richmenu-01b14aeaa749098578c087329d490de0'  # 圖文選單-購物 id
+            rich_menu_id = 'richmenu-273f9b1702ccde01ed8e75165a4e5cc8'  # 圖文選單-購物 id
             line_bot_api.link_rich_menu_to_user(user_id=event.source.user_id, rich_menu_id=rich_menu_id)
             question1 = f'請問 他/她 購物時喜歡買什麼類型的產品呢 ？'
             messages1 = TextSendMessage(text=question1)
@@ -166,7 +174,7 @@ def handle_postback_event(event):
 
         elif interest == '閱讀':
             # 提問、綁定圖文選單-閱讀
-            rich_menu_id = ''  # 圖文選單-閱讀 id
+            rich_menu_id = 'richmenu-5ffd31503c8634eba28e9b63ffb13b3b'  # 圖文選單-閱讀 id
             line_bot_api.link_rich_menu_to_user(user_id=event.source.user_id, rich_menu_id=rich_menu_id)
             print('綁定圖文選單 - 閱讀')
             question1 = f'請問 他/她 喜歡什麼風格的書呢 ？'
@@ -175,7 +183,7 @@ def handle_postback_event(event):
 
         elif interest == '電玩':
             # 提問、綁定圖文選單-電玩
-            rich_menu_id = ''  # 圖文選單-電玩 id
+            rich_menu_id = 'richmenu-763ccb0dc0d6ac4fda64b7f98083aeac'  # 圖文選單-電玩 id
             line_bot_api.link_rich_menu_to_user(user_id=event.source.user_id, rich_menu_id=rich_menu_id)
             print('綁定圖文選單 - 運動')
             question1 = f'請問 他/她 都玩什麼類型的電玩呢 ？'
@@ -184,7 +192,7 @@ def handle_postback_event(event):
 
         elif interest == '美食':
             # 提問、綁定圖文選單-美食
-            rich_menu_id = ''  # 圖文選單-美食 id
+            rich_menu_id = 'richmenu-dfdba72ba8eb5f8e2d73268e5e2a92ba'  # 圖文選單-美食 id
             line_bot_api.link_rich_menu_to_user(user_id=event.source.user_id, rich_menu_id=rich_menu_id)
             print('綁定圖文選單 - 美食')
             question1 = f'他/她 最喜歡什麼類型的料理呢 ？'
@@ -192,7 +200,8 @@ def handle_postback_event(event):
             line_bot_api.reply_message(event.reply_token, messages1)
 
         elif interest == '其他':
-            question1 = f'請輸入一樣 他/她 感興趣的東西 ？'
+            line_bot_api.unlink_rich_menu_from_user(user_id=event.source.user_id)
+            question1 = f'請輸入一樣 他/她 感興趣的人、事或物 ？'
             messages1 = TextSendMessage(text=question1)
             line_bot_api.reply_message(event.reply_token, messages1)
 
@@ -393,7 +402,6 @@ def handle_postback_event(event):
             question1 = f'請問您，他/ 她最有興趣的語言是 ？'
             messages1 = TextSendMessage(text=question1)
             line_bot_api.reply_message(event.reply_token, messages1)
-            # print('hello')#,user)
 
         elif interest == '心靈勵志':
             question1 = f'請問您，他/ 她最喜歡的心靈勵志叢書或作者 ？'
@@ -404,7 +412,6 @@ def handle_postback_event(event):
             question1 = f'那麼請問你 他/ 她會感興趣的書是 ？'
             messages1 = TextSendMessage(text=question1)
             line_bot_api.reply_message(event.reply_token, messages1)
-        # 連線到後端改狀態
 
     # 進入六個興趣分類之 電玩圖文選單
     elif big_interest == '電玩':
@@ -439,7 +446,6 @@ def handle_postback_event(event):
             question1 = f'那麼請問你 他/ 她最近玩過的遊戲是 ？'
             messages1 = TextSendMessage(text=question1)
             line_bot_api.reply_message(event.reply_token, messages1)
-        # 連線到後端改狀態
 
     # 進入六個興趣分類之 美食圖文選單
     elif big_interest == '美食':
@@ -463,7 +469,6 @@ def handle_postback_event(event):
             question1 = f'請問您，他/ 她最喜歡的日式食物 ？'
             messages1 = TextSendMessage(text=question1)
             line_bot_api.reply_message(event.reply_token, messages1)
-            # print('hello')#,user)
 
         elif interest == '韓式':
             question1 = f'請問您，他/ 她最喜歡的韓式食物 ？'
@@ -474,13 +479,11 @@ def handle_postback_event(event):
             question1 = f'那麼請問你 他/ 她最近著迷於何種美食 ？'
             messages1 = TextSendMessage(text=question1)
             line_bot_api.reply_message(event.reply_token, messages1)
-        # 連線到後端改狀態
 
     else :
         big_interest = event.postback.data.split('_')[0]
         interest = event.postback.data.split('_')[1]
         print(f"使用者選擇的興趣為: ", big_interest, interest)
-        # 如果九大類別
 
 
 
@@ -490,11 +493,23 @@ def handle_follow(event):
     profile = line_bot_api.get_profile(user_id)
     user_name = profile.display_name
     print(user_name)
-    welcome_word0 = f'{user_name}，您好(hello)！\n感謝您成為送禮達人的好友！\n\n若不想接收提醒，可以點畫面右上方的選單圖示，然後關閉「提醒」喔。\n<輸入任意詞開始挑禮物~>'
+    welcome_word0 = f'{user_name}，您好(hello)！\n感謝您成為送禮達人的好友！\n\n若不想接收提醒，可以點畫面右上方的選單圖示，然後關閉「提醒」喔。'
     messages0 = TextSendMessage(text=welcome_word0)
-    # call api 初始化使用者json檔(尚未打)
-    line_bot_api.reply_message(event.reply_token, [messages0])
+    # call api 初始化使用者json檔
+    # 組合成符合API input格式的字典
+    api_par = {"userId": user_id, "msg": 'RESET USER STATES'}
+    print(f"api_par: {api_par}")
+    # 這邊應該要call API
+    pass_par = callAPIdialog(api_par)
+    print(f"::賴爸msg:: pss_par=", str(pass_par))
+    print(f"data type= {type(pass_par)}")
+    response = main.main(pass_par)
+    response = [messages0] + response
+    line_bot_api.reply_message(event.reply_token, response)
 
+
+
+    line_bot_api.reply_message( event.reply_token, reply_msg_element)
 
 if __name__ == "__main__":
     # for heroku

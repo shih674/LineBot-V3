@@ -16,7 +16,7 @@
       },
       "action": {
         "type": "postback",
-        "text": "他喜歡的是台式料理",
+        "text": "我選擇的是: 台式",
         "data": "美食_台式"
       }
     },
@@ -29,7 +29,7 @@
       },
       "action": {
         "type": "postback",
-        "text": "他最喜歡中式料理",
+        "text": "我選擇的是: 中式",
         "data": "美食_中式"
       }
     },
@@ -42,7 +42,7 @@
       },
       "action": {
         "type": "postback",
-        "text": "他很享受西式餐點",
+        "text": "我選擇的是: 西式",
         "data": "美食_西式"
       }
     },
@@ -55,7 +55,7 @@
       },
       "action": {
         "type": "postback",
-        "text": "日式食物是他的愛",
+        "text": "我選擇的是: 日式",
         "data": "美食_日式"
       }
     },
@@ -68,7 +68,7 @@
       },
       "action": {
         "type": "postback",
-        "text": "辣辣的韓式食物牢牢抓住他的胃",
+        "text": "我選擇的是: 韓式",
         "data": "美食_韓式"
       }
     },
@@ -81,7 +81,7 @@
       },
       "action": {
         "type": "postback",
-        "text": "其他",
+        "text": "我選擇的是: 其他",
         "data": "美食_其他"
       }
     }

@@ -78,9 +78,13 @@ def scene1_5():
 def Nscene2_1(user_id):
     # 暫時命名為這個，待流程確定後會替代 scene2()
     # 綁定圖文選單 九大問題，需要參數 userid, 圖文選單id
-    rich_menu_id = 'richmenu-139bd108a8c5d3c239a76976126ff5d6'
+    rich_menu_id = 'richmenu-a3540bbc56327fad398ff7823b69d0af'
     line_bot_api.link_rich_menu_to_user(user_id=user_id, rich_menu_id=rich_menu_id)
-
+    reply = []
+    question1 = f'請問您，他對哪個領域最感興趣呢 ？ \n提示: 請收起小鍵盤，使用下方的圖文選單，用點選的就好囉~'
+    messages1 = TextSendMessage(text=question1)
+    reply.append(messages1)
+    return reply
 
 def Nscene2_2(user_id):
     # 暫時命名為這個，待流程確定後會替代 scene2()
@@ -171,6 +175,8 @@ def scene6(subject, present_cnt, tags, product_info, thx_word):
     reply.append(messages1)
     messages2 = TextSendMessage(text=thx_word)
     reply.append(messages2)
+    messages3 = TextSendMessage(text="當您準備好要挑禮物時，傳個訊息讓我知道吧 >.^")
+    reply.append(messages3)
     return reply
 
 
@@ -189,12 +195,17 @@ def main(response):
         return scene1_4(response["subject"])
     elif state == "basic_info_5":
         return scene1_5()
+
     elif state == "9question":
-        return Nscene2_1(response["user_id"])
+        return Nscene2_1(response['userId'])
     elif state == "6question":
-        return Nscene2_2(response["user_id"])
+        return Nscene2_2(response['userId'])
+    elif state == "open_question":
+        return Nscene2_2(response['userId'])
+
     elif state == "ask_interest":
         return scene2()
+
     elif state == "first_question":
         return scene3(response["subject"], response['product_cnt'], response['next_tag'])
     elif state == "question_loop_False":

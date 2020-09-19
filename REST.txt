@@ -4,10 +4,13 @@ def scenes1_4(subject):
 
 def scenes1_5():
 
+# 綻放
+https://sys0828-a.herokuapp.com/api
 
 https://b7c2e0b89495.ngrok.io/callback
 
 https://aigift-test.herokuapp.com/callback
+https://linebot-v3.herokuapp.com
 =====================================================
 #解除綁定
 
@@ -15,42 +18,31 @@ line_bot_api.unlink_rich_menu_from_user(user_id=event.source.user_id)
 ======================================================
 # Richmenu ID
 
-興趣大分類1
-richmenu-139bd108a8c5d3c239a76976126ff5d6(已不需要，待刪除)
+興趣大分類
+richmenu-a3540bbc56327fad398ff7823b69d0af
 
-興趣大分類(完成版)(會需要再調整)
-richmenu-0b4d6446104a1adbe58416eeed1dd8c3
+音樂
+richmenu-0e753f5359f10765c15a72cca90c8325
 
-音樂(已不需要，待刪除)
-richmenu-c2665a69816619ec6e622f394cbacc70
+運動
+richmenu-fffe6997e86a40769e887c86e399d7d7
 
-音樂(完成版)
-richmenu-8f5cf82c65dd4573209e73053b0196db
+影劇
+richmenu-7f34f76e2fa310f7536b2372af9f453b
 
-運動(完成版)
-richmenu-025228c97996cc37f3673980f1e6ea16
+旅遊
+richmenu-daba551c917aa72b6d66687c5107854d
 
-影劇(完成版)
-richmenu-c1fcd9427bd265ec8e5c9b75c42fb31e
+購物
+richmenu-273f9b1702ccde01ed8e75165a4e5cc8
 
-旅遊(不明情況錯誤，待刪除)
-richmenu-6bc02bbe9a9a45c06f614de9d3078aaa
+閱讀
+richmenu-5ffd31503c8634eba28e9b63ffb13b3b
 
-旅遊(完成版)
-richmenu-cca879ea113a244f44df1fa82db59e29
+電玩
+richmenu-763ccb0dc0d6ac4fda64b7f98083aeac
 
-購物(完成版)
-richmenu-01b14aeaa749098578c087329d490de0
-
-閱讀(完成版)
-richmenu-a8c305f5c4bf62050b0329f4b16af0be(待刪除)
-richmenu-8a6c8d6d4ebaedbe40573c06b4196f67(待刪除)
-richmenu-86e093bc44c5406711cd98436cfa5b92(完成版)
-
-電玩(完成版)
-richmenu-2c93327c8ad8face0be0073d258b3f51
-
-美食(完成版)
-richmenu-99755acb4d044bc8b298a3e108b6a8c1
+美食
+richmenu-dfdba72ba8eb5f8e2d73268e5e2a92ba
 
 其他

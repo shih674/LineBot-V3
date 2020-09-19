@@ -16,7 +16,7 @@
       },
       "action": {
         "type": "postback",
-        "text": "我選擇的是: 古典音樂",
+        "text": "古典音樂",
         "data": "音樂_古典音樂"
       }
     },
@@ -29,7 +29,7 @@
       },
       "action": {
         "type": "postback",
-        "text": "我選擇的是: 流行音樂",
+        "text": "流行音樂",
         "data": "音樂_流行音樂"
       }
     },
@@ -42,7 +42,7 @@
       },
       "action": {
         "type": "postback",
-        "text": "我選擇的是: 電音樂曲",
+        "text": "電音樂曲",
         "data": "音樂_電音樂曲"
       }
     },
@@ -55,7 +55,7 @@
       },
       "action": {
         "type": "postback",
-        "text": "我選擇的是: 嘻哈饒舌",
+        "text": "嘻哈饒舌",
         "data": "音樂_嘻哈饒舌"
       }
     },
@@ -68,7 +68,7 @@
       },
       "action": {
         "type": "postback",
-        "text": "我選擇的是: 獨立樂團",
+        "text": "獨立樂團",
         "data": "音樂_獨立樂團"
       }
     },
@@ -81,7 +81,7 @@
       },
       "action": {
         "type": "postback",
-        "text": "我選擇的是: 其他",
+        "text": "沒找到適合的選項",
         "data": "音樂_其他"
       }
     }

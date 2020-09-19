@@ -16,7 +16,6 @@
       },
       "action": {
         "type": "postback",
-	"text": "我選擇的是: 音樂",
         "data": "9question_音樂"
       }
     },
@@ -29,7 +28,6 @@
       },
       "action": {
         "type": "postback",
-	"text": "我選擇的是: 運動",
         "data": "9question_運動"
       }
     },
@@ -42,7 +40,6 @@
       },
       "action": {
         "type": "postback",
-	"text": "我選擇的是: 影劇",
         "data": "9question_影劇"
       }
     },
@@ -55,7 +52,6 @@
       },
       "action": {
         "type": "postback",
-	"text": "我選擇的是: 旅遊",
         "data": "9question_旅遊"
       }
     },
@@ -68,7 +64,6 @@
       },
       "action": {
         "type": "postback",
-	"text": "我選擇的是: 購物",
         "data": "9question_購物"
       }
     },
@@ -81,7 +76,6 @@
       },
       "action": {
         "type": "postback",
-	"text": "我選擇的是: 閱讀",
         "data": "9question_閱讀"
       }
     },
@@ -94,7 +88,6 @@
       },
       "action": {
         "type": "postback",
-	"text": "我選擇的是: 電動",
         "data": "9question_電動"
       }
     },
@@ -107,7 +100,6 @@
       },
       "action": {
         "type": "postback",
-	"text": "我選擇的是: 美食",
         "data": "9question_美食"
       }
     },
@@ -120,7 +112,6 @@
       },
       "action": {
         "type": "postback",
-	"text": "我選擇的是: 其他",
         "data": "9question_其他"
       }
     }
